@@ -11,12 +11,12 @@ describe('arrays', function() {
   });
 
   it('you should be able to determine the location of an item in an array', function() {
-    expect(arraysAnswers.indexOf(a, 3)).to.eql(2);
-    expect(arraysAnswers.indexOf(a, 5)).to.eql(-1);
+    expect(arraysAnswers.indexOf(a, 3)).to.equal(2);
+    expect(arraysAnswers.indexOf(a, 5)).to.equal(-1);
   });
 
   it('you should be able to add the values of an array', function() {
-    expect(arraysAnswers.sum(a)).to.eql(10);
+    expect(arraysAnswers.sum(a)).to.equal(10);
   });
 
   it('you should be able to remove all instances of a value from an array', function() {
@@ -24,7 +24,7 @@ describe('arrays', function() {
     var result = arraysAnswers.remove(a, 2);
 
     expect(result).to.have.length(3);
-    expect(result.join(' ')).to.eql('1 3 4');
+    expect(result.join(' ')).to.equal('1 3 4');
   });
 
   it('you should be able to remove all instances of a value from an array, returning the original array', function() {
