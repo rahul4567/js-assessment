@@ -10,6 +10,23 @@ exports.flowControlAnswers = {
     //
     // otherwise the function should return the number, or false if no number
     // was provided or the value provided is not a number
+    if(num=='undefined' || isNaN(num)) {
+        console.log(num);
+        return false;
+    }else if(num%15 == 0) {
+        console.log(num);
+        return "fizzbuzz";
+    }else if(num % 5 == 0) {
+        console.log(num);
+        return 'buzz';
+    }else if(num % 3 == 0 ) {
+        console.log(num);
+        return 'fizz'
+    }else {
+        console.log(num);
+        return num;
+    }
+   
 
   }
 };

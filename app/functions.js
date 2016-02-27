@@ -2,15 +2,20 @@ exports = (typeof window === 'undefined') ? global : window;
 
 exports.functionsAnswers = {
   argsAsArray : function(fn, arr) {
-
+    var xyz = fn(arr[0],arr[1],arr[2]);
+    return xyz;
   },
 
   speak : function(fn, obj) {
-
+    var results = fn.call(obj);
+    console.log(results);
+    return results;
   },
 
   functionFunction : function(str) {
-
+    return function(str1) {
+      return str+', '+str1;
+    }
   },
 
   makeClosures : function(arr, fn) {
