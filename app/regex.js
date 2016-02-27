@@ -18,6 +18,14 @@ exports.regexAnswers = {
 
   captureThreeNumbers : function(str) {
 
+    if(/\d{3}/.test(str)) {
+      var xxx =str.replace(/[a-zA-Z]/g , "");
+       xxx = xxx.substring(0,3);
+       return xxx;
+    }else{
+      return false;
+    }
+      
   },
 
   matchesPattern : function(str) {
