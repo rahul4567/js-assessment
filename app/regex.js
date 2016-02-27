@@ -2,9 +2,7 @@ exports = (typeof window === 'undefined') ? global : window;
 
 exports.regexAnswers = {
   containsNumber : function(str) {
-    var regExpersion = new RegExp('^[0-9]$');
-    console.log(/^\w+$/i.test(str));
-    return regExpersion.test(str);
+    return /\d+/.test(str);
   },
 
   containsRepeatingLetter : function(str) {
@@ -32,7 +30,10 @@ exports.regexAnswers = {
     return /^(?:\s*)\d{3}-\d{3}-\d{4}(?:\s*)$/.test(str);
   },
   isUSD : function(str) {
-    console.log(str.replace(/,/g , ""));
-    return /^\$?[0-9]+\.?[0-9]?[0-9]?$/.test(str.replace(/,/g , ""));
+    var x = str.split('.');
+    if (x.length === 2 && x[1].length !== 2) {
+      return false;
+    }
+    return (str.charAt(0) === '$') ? /^\$?\d+(,\d{3})*\.?[0-9]?[0-9]?$/.test(str) : false;
   }
 };
